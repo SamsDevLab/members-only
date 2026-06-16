@@ -2,4 +2,9 @@ async function getSignUpForm(req, res) {
   res.render("auth/sign-up", { title: "Sign-Up Form" });
 }
 
-module.exports = { getSignUpForm };
+async function submitNewUser(req, res) {
+  console.log(req.body);
+  res.redirect("/");
+}
+
+module.exports = { getSignUpForm, submitNewUser };
