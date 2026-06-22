@@ -3,7 +3,19 @@
   <%- include("../partials/head.ejs") %>
   <body>
     <%- include("../partials/header.ejs") %>
-    <main></main>
+    <main>
+      <form action="/auth/log-in" method="POST">
+        <div class="form-field">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
     <%-include("../partials/footer.ejs") %>
   </body>
 </html>
