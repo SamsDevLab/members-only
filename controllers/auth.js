@@ -1,8 +1,6 @@
 const { matchedData } = require("express-validator");
 const usersModel = require("../models/users");
 
-// bcrypt passwords here before passing to model
-
 async function getSignUpForm(req, res) {
   res.render("auth/sign-up", { title: "Sign-Up Form" });
 }
