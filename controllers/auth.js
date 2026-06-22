@@ -1,4 +1,3 @@
-const bcrypt = require("bcryptjs");
 const { matchedData } = require("express-validator");
 const usersModel = require("../models/users");
 
@@ -9,10 +8,9 @@ async function getSignUpForm(req, res) {
 }
 
 async function submitNewUser(req, res) {
-  const { password, passwordConfirmation, ...userData } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
+  const { passwordConfirmation, ...userData } = req.body;
+  const newUser = { ...userData };
 
-  const newUser = { ...userData, password: hashedPassword };
   usersModel.addNewUser(newUser);
 }
 
