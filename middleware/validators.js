@@ -7,13 +7,13 @@ const validateUserSignUp = [
     .isLength({ min: 1 })
     .withMessage("First name has to be at least 1 character long.")
     .isAlpha()
-    .withMessage("First name can only contain alphabetic characters"),
+    .withMessage("First name can only contain alphabetic characters."),
   body("lastName")
     .trim()
     .isLength({ min: 1 })
     .withMessage("Last name has to be at least 1 character long.")
     .isAlpha()
-    .withMessage("Last name can only contain alphabetic characters"),
+    .withMessage("Last name can only contain alphabetic characters."),
   body("username")
     .trim()
     .isLength({ min: 3 })
