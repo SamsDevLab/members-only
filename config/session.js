@@ -1,15 +1,18 @@
-const express = require("express");
-const app = express();
 const session = require("express-session");
-const PgSession = require("connect-pg-simple")(session);
+const pgSession = require("connect-pg-simple")(session);
+const pool = require("../db/pool");
 
-app.use(
-  session({
-    store: new PgSession({
-      pool,
-    }),
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: false,
+const sessionConfig = {
+  store: new pgSession({
+    pool: pool,
+    tableName: "session",
   }),
-);
+  secret: process.env.SESSION_SECRET,
+  saveUninitialized: false,
+  resave: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24,
+  },
+};
+
+module.exports = sessionConfig;
