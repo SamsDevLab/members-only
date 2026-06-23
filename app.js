@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
+const passport = require("passport");
 const session = require("express-session");
 const sessionConfig = require("./config/session");
 const indexRouter = require("./routes/index");
@@ -13,6 +14,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(session(sessionConfig));
+
+require("./config/passport");
+app.use(passport.session());
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
