@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const path = require("node:path");
-const { body, validationResult, matchedData } = require("express-validator");
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const errorHandler = require("./middleware/errorHandler");
