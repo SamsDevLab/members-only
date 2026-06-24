@@ -17,7 +17,7 @@ module.exports = function (passport) {
           return done(null, false, { message: "Incorrect username." });
         }
 
-        const match = bcrypt.compare(username, user.password);
+        const match = await bcrypt.compare(password, user.password);
 
         if (!match) {
           return done(null, false, { message: "Incorrect password." });
