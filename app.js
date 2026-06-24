@@ -28,6 +28,11 @@ app.use((req, res, next) => {
 
 require("./config/passport")(passport);
 
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user; // Makes 'currentUser' available in all ejs files
+  next();
+});
+
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 

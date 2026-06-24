@@ -1,5 +1,10 @@
 <header>
   <h1>Boat Club Messenger</h1>
+  <% if (currentUser !== undefined && currentUser !== null){ %>
+    <h2>Welcome, <%= currentUser %></h2>
+  <% } else { %>
+    <h2>Welcome!</h2>
+  <% } %>
   <div>
     <a href="/auth/login">Log In</a>
     <a href="/auth/logout">Log Out</a>
