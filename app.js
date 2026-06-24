@@ -14,9 +14,19 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(session(sessionConfig));
-
-require("./config/passport");
 app.use(passport.session());
+app.use((req, res, next) => {
+  if (req.session.passport !== null || req.session.passport !== undefined) {
+    console.log(req.session);
+    console.log(req.user);
+    next();
+  } else {
+    console.log("No user logged in");
+    console.log(req.session);
+  }
+});
+
+require("./config/passport")(passport);
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
