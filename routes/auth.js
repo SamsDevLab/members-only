@@ -7,10 +7,10 @@ const validateUserSignUp = require("../middleware/validators.js");
 router.get("/log-in", authController.renderLoginForm);
 router.post(
   "/log-in",
-  passport.authenticate("local", (error, user, info) => {
-    if (error) {
-      console.log(error);
-    }
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/auth/login",
+    failureMessage: true,
   }),
 );
 
