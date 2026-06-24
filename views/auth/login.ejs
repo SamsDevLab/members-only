@@ -4,7 +4,12 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <form action="/auth/log-in" method="POST">
+      <% if (messages.length !== 0) { %>
+        <% messages.forEach(message => { %>
+          <p><%= message %></p>
+        <% }) %>
+      <% } %>
+      <form action="/auth/login" method="POST">
         <div class="form-field">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required />

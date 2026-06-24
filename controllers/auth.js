@@ -3,7 +3,7 @@ const usersModel = require("../models/users");
 
 function renderLoginForm(req, res) {
   const messages = req.session.messages;
-  console.log(messages);
+  req.session.messages = [];
   res.render("auth/login", { title: "Login Form", messages: messages });
 }
 
