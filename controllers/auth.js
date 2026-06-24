@@ -9,10 +9,6 @@ function renderSignUpForm(req, res) {
   res.render("auth/sign-up", { title: "Sign-Up Form" });
 }
 
-function logInUser(req, res) {
-  console.log(req.body);
-}
-
 function submitNewUser(req, res) {
   const { passwordConfirmation, ...userData } = req.body;
   const newUser = { ...userData };
@@ -25,6 +21,5 @@ function submitNewUser(req, res) {
 module.exports = {
   renderLoginForm,
   renderSignUpForm,
-  logInUser,
   submitNewUser,
 };
