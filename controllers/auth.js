@@ -2,11 +2,13 @@ const { matchedData } = require("express-validator");
 const usersModel = require("../models/users");
 
 function renderLoginForm(req, res) {
-  res.render("auth/log-in", { title: "Login Form" });
+  const messages = req.session.messages;
+  console.log(messages);
+  res.render("auth/login", { title: "Login Form", messages: messages });
 }
 
 function renderSignUpForm(req, res) {
-  res.render("auth/sign-up", { title: "Sign-Up Form" });
+  res.render("auth/signup", { title: "Sign-Up Form" });
 }
 
 function submitNewUser(req, res) {

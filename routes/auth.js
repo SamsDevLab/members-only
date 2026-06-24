@@ -4,9 +4,9 @@ const passport = require("passport");
 const authController = require("../controllers/auth.js");
 const validateUserSignUp = require("../middleware/validators.js");
 
-router.get("/log-in", authController.renderLoginForm);
+router.get("/login", authController.renderLoginForm);
 router.post(
-  "/log-in",
+  "/login",
   passport.authenticate("local", {
     successRedirect: "/",
     failureRedirect: "/auth/login",
@@ -14,9 +14,9 @@ router.post(
   }),
 );
 
-router.get("/log-out", authController.logOut);
+router.get("/logout", authController.logOut);
 
-router.get("/sign-up", authController.renderSignUpForm);
-router.post("/sign-up", validateUserSignUp, authController.submitNewUser);
+router.get("/signup", authController.renderSignUpForm);
+router.post("/signup", validateUserSignUp, authController.submitNewUser);
 
 module.exports = router;
