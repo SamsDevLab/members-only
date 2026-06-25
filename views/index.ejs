@@ -6,7 +6,7 @@
     <main>
       <section class="message-board">
         <h2>Message Board</h2>
-        <% if (messages.length !== 0){ %>
+       <% if (messages.length !== 0){ %>
          <% messages.forEach(message => { %>
           <% if(message.member === true) { %>
               <h3><%= message.username %></h3>
@@ -20,7 +20,7 @@
          <% }) %>
         <% } else { %>
             <p>There are no messages at this time.</p>
-       <% } %>
+        <% } %> 
       </section>
       <form action="/messages/add-message" method="POST">
         <div>
