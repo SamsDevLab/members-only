@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 require("./config/passport")(passport);
 
 app.use((req, res, next) => {
-  res.locals.currentUser = req.user.first_name; // Makes 'currentUser' available in all ejs files
+  res.locals.currentUser = req.user; // Makes 'currentUser' available in all ejs files
   next();
 });
 

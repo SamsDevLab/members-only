@@ -1,7 +1,7 @@
 <header>
   <h1>Boat Club Messenger</h1>
   <% if (currentUser !== undefined && currentUser !== null){ %>
-    <h2>Welcome back, <%= currentUser %>!</h2>
+    <h2>Welcome back, <%= currentUser.first_name %>!</h2>
   <% } else { %>
     <h2>Welcome!</h2>
   <% } %>
