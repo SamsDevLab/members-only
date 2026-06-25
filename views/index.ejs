@@ -8,8 +8,13 @@
         <h2>Message Board</h2>
         <% if (messages.length !== 0){ %>
          <% messages.forEach(message => { %>
-            <h3><%= message.username %></h3>
-            <h3><%= message.timestamp %></h3>
+          <% if(message.member === true) { %>
+              <h3><%= message.username %></h3>
+              <h3><%= message.timestamp %></h3>
+            <% } else { %>
+              <h3>Anonymous</h3>
+              <h3>Time: N/A</h3>
+            <%} %>
             <h4><%= message.title %></h4>
             <p><%= message.text %></p>
          <% }) %>
