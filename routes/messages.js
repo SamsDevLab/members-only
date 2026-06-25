@@ -1,9 +1,7 @@
 const express = require("express");
-const router = express.Router();
+const router = express();
+const messagesController = require("../controllers/messages");
 
-router.post("/add-message", (req, res) => {
-  const { newMessage } = req.body;
-  console.log(newMessage.trim());
-});
+router.post("/add-message", messagesController.addNewMessage);
 
 module.exports = router;
