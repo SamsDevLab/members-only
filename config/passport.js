@@ -22,6 +22,7 @@ module.exports = function (passport) {
         if (!match) {
           return done(null, false, { message: "Incorrect password." });
         }
+
         return done(null, user);
       } catch (error) {
         return done(error);
@@ -35,9 +36,10 @@ module.exports = function (passport) {
 
   passport.deserializeUser(async (id, done) => {
     try {
-      const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [
-        id,
-      ]);
+      const { rows } = await pool.query(
+        "SELECT id, first_name, last_name, username, member, admin FROM users WHERE id = $1",
+        [id],
+      );
       const user = rows[0];
 
       done(null, user);
