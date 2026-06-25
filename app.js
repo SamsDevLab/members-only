@@ -6,6 +6,7 @@ const session = require("express-session");
 const sessionConfig = require("./config/session");
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
+const messagesRouter = require("./routes/messages");
 const errorHandler = require("./middleware/errorHandler");
 
 app.use(express.static("public"));
@@ -35,6 +36,7 @@ app.use((req, res, next) => {
 
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
+app.use("/messages", messagesRouter);
 
 app.use(errorHandler);
 
