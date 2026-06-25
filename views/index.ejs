@@ -4,7 +4,16 @@
   <body>
     <%- include("partials/header") %>
     <main>
-      <h2>Pretentious Boat Club</h2>
+      <section class="message-board">
+        <h2>Message Board</h2>
+      </section>
+      <form action="/messages" method="POST">
+        <div class="new-message-input">
+          <label for="new-message">New message: </label>
+          <textarea name="new-message" id="new-message"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </main>
     <%- include("partials/footer") %>
   </body>
