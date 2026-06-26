@@ -2,9 +2,10 @@ const { matchedData } = require("express-validator");
 const usersModel = require("../models/users");
 
 function renderLoginForm(req, res) {
-  const messages = req.session.messages;
+  const errorMessages = req.session.messages;
   req.session.messages = [];
-  res.render("auth/login", { title: "Login Form", messages: messages });
+
+  res.render("auth/login", { title: "Login Form", errors: errorMessages });
 }
 
 function renderSignUpForm(req, res) {
