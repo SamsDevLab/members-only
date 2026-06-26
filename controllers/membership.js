@@ -24,7 +24,8 @@ async function attemptUpgradeToMember(req, res) {
       errMsg: "Incorrect password",
     });
   } else {
-    membershipModel.upgradeToMember(req.user);
+    await membershipModel.upgradeToMember(req.user);
+    res.redirect("/");
   }
 }
 
