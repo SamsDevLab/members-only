@@ -4,13 +4,12 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
-      <form action="" method="POST">
-        <div>
-          <label for="member-password"
-            >Enter membership password to become member:
-          </label>
-          <input type="password" id="member-password" name="memberPassword" />
-        </div>
+      <form action="/membership" method="POST">
+        <label for="member-password"
+          >Enter password to upgrade to Member account</label
+        >
+        <input type="text" id="member-password" name="passwordAttempt" />
+        <button type="submit">Submit</button>
       </form>
     </main>
     <%- include("../partials/footer.ejs") %>
