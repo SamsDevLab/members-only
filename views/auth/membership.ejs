@@ -4,6 +4,9 @@
   <body>
     <%- include("../partials/header.ejs") %>
     <main>
+      <% if(errMsg !== null) { %>
+        <p><%= errMsg %></p>
+      <% } %>
       <form action="/membership" method="POST">
         <label for="member-password"
           >Enter password to upgrade to Member account</label
