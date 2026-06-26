@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const membershipController = require("../controllers/membership");
 
-router.get("/", (req, res) => {
-  console.log(req);
-});
+router.get("/", membershipController.renderMemberSignup);
 
 module.exports = router;
