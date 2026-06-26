@@ -7,6 +7,7 @@ const sessionConfig = require("./config/session");
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const messagesRouter = require("./routes/messages");
+const membershipRouter = require("./routes/membership");
 const errorHandler = require("./middleware/errorHandler");
 
 app.use(express.static("public"));
@@ -16,16 +17,16 @@ app.set("view engine", "ejs");
 
 app.use(session(sessionConfig));
 app.use(passport.session());
-app.use((req, res, next) => {
-  if (req.session.passport !== null || req.session.passport !== undefined) {
-    console.log(req.session);
-    console.log(req.user);
-    next();
-  } else {
-    console.log("No user logged in");
-    console.log(req.session);
-  }
-});
+// app.use((req, res, next) => {
+//   if (req.session.passport !== null || req.session.passport !== undefined) {
+//     console.log(req.session);
+//     console.log(req.user);
+//     next();
+//   } else {
+//     console.log("No user logged in");
+//     console.log(req.session);
+//   }
+// });
 
 require("./config/passport")(passport);
 
@@ -37,6 +38,7 @@ app.use((req, res, next) => {
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/messages", messagesRouter);
+app.use("/membership", membershipRouter);
 
 app.use(errorHandler);
 
