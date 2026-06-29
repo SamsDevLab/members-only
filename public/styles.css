@@ -173,7 +173,7 @@ input {
   min-width: 40%;
   margin: 2rem 0;
   background-color: #f8f4e9;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 0.3rem;
 }
 
@@ -245,4 +245,9 @@ form button:hover {
   margin-bottom: 10rem;
   padding: 2rem;
   border-radius: 0.3rem;
+}
+
+.login-error {
+  color: #f8f4e9;
+  margin-bottom: 2rem;
 }

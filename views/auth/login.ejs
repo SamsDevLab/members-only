@@ -6,7 +6,7 @@
     <main>
       <% if (errors !== undefined) { %>
        <% errors.forEach(error => { %>
-          <p><%= error %></p>  
+          <p class="login-error"><%= error %></p>  
         <% }) %>
       <% } %>
       <form class="login-form" action="/auth/login" method="POST">
