@@ -1,18 +1,24 @@
 <header>
   <h1>Boat Club Messenger</h1>
   <% if (currentUser !== undefined){ %>
-    <h2>Welcome back, <%= currentUser.first_name %>!</h2>
+    <div class="dropdown">
+      <button class="dropdown-btn">Welcome aboard, <%= currentUser.first_name %>! ⌄</button>
+      <div class="dropdown-content">
+          <a href="/auth/logout">Log Out</a>
+        <% if(currentUser !== undefined && currentUser.member === false){ %>
+          <a href="/membership">Become a Member</a>
+        <% } else if(currentUser !== undefined && currentUser.member === true){ %>
+          <a href="/admin">Become an Admin</a>
+        <% } %>
+      </div>
+    </div>
   <% } else { %>
-    <h2>Welcome!</h2>
+    <div class="dropdown">
+      <button class="dropdown-btn">Member Login</button>
+      <div class="dropdown-content">
+        <a href="/auth/login">Log In</a>
+        <a href="/auth/signup">Sign Up</a>
+      </div>
+    </div> 
   <% } %>
-  <div>
-    <a href="/auth/login">Log In</a>
-    <a href="/auth/signup">Sign Up</a>
-    <a href="/auth/logout">Log Out</a>
-    <% if(currentUser !== undefined && currentUser.member === false){ %>
-      <a href="/membership">Become a Member</a>
-    <% } else if(currentUser !== undefined && currentUser.member === true){ %>
-      <a href="/admin">Become an Admin</a>
-    <% } %>
-  </div>
 </header>

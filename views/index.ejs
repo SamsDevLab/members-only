@@ -8,6 +8,7 @@
         <h2>Message Board</h2>
        <% if (messages.length !== 0){ %>
          <% messages.forEach(message => { %>
+          <div class="message-card">
             <% if (user !== undefined && user.member === true){ %>
               <h3><%= message.username %></h3>
               <h3><%= message.timestamp %></h3>
@@ -22,8 +23,9 @@
                 <input type="hidden" name="messageId" value="<%= message.messageid %>">
                 <button>Delete</button>
               </form>
-            <% } %>
-         <% }) %>
+            <% } %> 
+          </div>
+        <% }) %>
         <% } else { %>
             <p>There are no messages at this time.</p>
         <% } %> 
