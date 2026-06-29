@@ -154,6 +154,11 @@ main {
   justify-content: center;
   align-items: center;
   font-family: "Inter";
+  padding: 2rem;
+}
+
+input {
+  padding-left: 0.15rem;
 }
 
 /**********************/
@@ -164,7 +169,7 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   min-width: 40%;
   margin: 2rem 0;
   background-color: #f8f4e9;
@@ -173,10 +178,27 @@ main {
 }
 
 .message-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   border-radius: 0.4rem;
   background-color: #fcfcfa;
   border-left: 4px solid #1f6f5f;
   padding: 0.5rem;
+}
+
+.delete-button {
+  background-color: #8b0000;
+  color: #fcfcfa;
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  align-self: start;
+}
+
+.delete-button:hover {
+  background-color: #a30000;
+  cursor: pointer;
 }
 
 .new-message-input {
@@ -191,10 +213,36 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 3rem;
+}
+
+form button {
+  background-color: #c9a227;
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+
+form button:hover {
+  background-color: #b18e20;
+  cursor: pointer;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
+}
+
+.add-message-form {
+  background-color: #f8f4e9;
+  padding: 1.25rem;
+  border-radius: 0.3rem;
+}
+
+.login-form,
+.account-upgrade-form {
+  background-color: #f8f4e9;
+  margin-bottom: 10rem;
+  padding: 2rem;
+  border-radius: 0.3rem;
 }
