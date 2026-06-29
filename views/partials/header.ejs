@@ -7,7 +7,7 @@
           <a href="/auth/logout">Log Out</a>
         <% if(currentUser !== undefined && currentUser.member === false){ %>
           <a href="/membership">Become a Member</a>
-        <% } else if(currentUser !== undefined && currentUser.member === true){ %>
+        <% } else if(currentUser !== undefined && currentUser.member === true && currentUser.admin === false){ %>
           <a href="/admin">Become an Admin</a>
         <% } %>
       </div>
