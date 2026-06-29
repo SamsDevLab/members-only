@@ -74,7 +74,7 @@ body {
   flex-direction: column;
 }
 
-h1 {
+#main-header {
   font-family: "Cinzel";
   font-size: 1.5rem;
   color: #c9a227;
@@ -240,7 +240,8 @@ form button:hover {
 }
 
 .login-form,
-.account-upgrade-form {
+.account-upgrade-form,
+.signup-form {
   background-color: #f8f4e9;
   margin-bottom: 10rem;
   padding: 2rem;
