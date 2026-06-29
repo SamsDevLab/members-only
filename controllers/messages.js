@@ -5,4 +5,9 @@ async function addNewMessage(req, res) {
   res.redirect("/");
 }
 
-module.exports = { addNewMessage };
+async function deleteMessage(req, res) {
+  await messagesModel.deleteMessageFromDb(req);
+  res.redirect("/");
+}
+
+module.exports = { addNewMessage, deleteMessage };

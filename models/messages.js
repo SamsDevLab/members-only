@@ -14,7 +14,7 @@ async function addNewMessageToDb(req, res) {
 
 async function getAllMessages(req, res) {
   const result = await pool.query(
-    `SELECT username, member, admin, title, text, timestamp
+    `SELECT messages.id AS messageid, username, member, admin, title, text, timestamp
             FROM messages
             JOIN users ON messages.user_id = users.id
         `,
@@ -23,4 +23,14 @@ async function getAllMessages(req, res) {
   return result.rows;
 }
 
-module.exports = { addNewMessageToDb, getAllMessages };
+async function deleteMessageFromDb(req, res) {
+  const id = req.body.messageId;
+  await pool.query(
+    `DELETE FROM messages
+      WHERE messages.id = $1
+    `,
+    [id],
+  );
+}
+
+module.exports = { addNewMessageToDb, getAllMessages, deleteMessageFromDb };
