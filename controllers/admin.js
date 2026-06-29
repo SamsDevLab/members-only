@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+const adminModel = require("../models/admin");
 
 function renderAdminSignup(req, res) {
   const user = req.user;
@@ -23,7 +24,8 @@ async function attemptUpgradeToAdmin(req, res) {
       errMsg: "Incorrect password",
     });
   } else {
-    console.log("Justin Townes Earle");
+    adminModel.upgradeToAdmin(req.user);
+    res.redirect("/");
   }
 }
 
