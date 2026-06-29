@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../partials/head.ejs") %>
+  <body>
+    <%- include("../partials/header.ejs") %>
+    <main>
+      <% if(errMsg !== null) { %>
+        <p><%= errMsg %></p>
+      <% } %>
+      <form action="/admin" method="POST">
+        <label for="admin-password">Enter password to upgrade to Admin account</label>
+        <input type="text" id="admin-password" name="passwordAttempt" />
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <%- include("../partials/footer.ejs") %>
+  </body>
+</html>
