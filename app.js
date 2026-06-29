@@ -8,6 +8,7 @@ const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const messagesRouter = require("./routes/messages");
 const membershipRouter = require("./routes/membership");
+const adminRouter = require("./routes/admin");
 const errorHandler = require("./middleware/errorHandler");
 
 app.use(express.static("public"));
@@ -39,6 +40,7 @@ app.use("/", indexRouter);
 app.use("/auth", authRouter);
 app.use("/messages", messagesRouter);
 app.use("/membership", membershipRouter);
+app.use("/admin", adminRouter);
 
 app.use(errorHandler);
 
