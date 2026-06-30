@@ -10,8 +10,10 @@
          <% messages.forEach(message => { %>
           <div class="message-card">
             <% if (user !== undefined && user.member === true){ %>
-              <h3><%= message.username %></h3>
-              <h3><%= message.timestamp %></h3>
+              <div class="message-details">
+                <h3><%= message.username %></h3>
+                <h3><%= message.formattedTimestamp %></h3>
+              </div>
              <% } else { %>
               <h3>Become a member to view author</h3>
               <h3>Become a member to view timestamp</h3>

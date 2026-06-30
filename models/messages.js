@@ -20,7 +20,14 @@ async function getAllMessages(req, res) {
         `,
   );
 
-  return result.rows;
+  const formattedRows = result.rows.map((object) => {
+    const formattedTimestamp = object.timestamp.toLocaleString();
+    const { timestamp, ...formattedObj } = object;
+
+    return { ...formattedObj, formattedTimestamp };
+  });
+
+  return formattedRows;
 }
 
 async function deleteMessageFromDb(req, res) {
