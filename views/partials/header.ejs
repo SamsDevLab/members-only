@@ -63,6 +63,7 @@
 </g>
     </svg>
   <% if (currentUser !== undefined){ %>
+    <div class="account-info">
     <div class="dropdown">
       <button class="dropdown-btn">Welcome aboard, <%= currentUser.first_name %>! ⌄</button>
       <div class="dropdown-content">
@@ -73,6 +74,12 @@
           <a href="/admin">Become an Admin</a>
         <% } %>
       </div>
+    </div>
+      <% if(currentUser!== undefined && currentUser.member === true && currentUser.admin === false) { %>
+        <p class="account-badge">MEMBER</p>
+      <% } else if (currentUser !== undefined && currentUser.member === true && currentUser.admin   === true) { %>
+        <p class="account-badge">MEMBER • ADMIN</p>
+      <% } %>
     </div>
   <% } else { %>
     <div class="dropdown">
