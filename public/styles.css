@@ -140,6 +140,9 @@ footer {
 }
 
 footer {
+  border-top: 1px solid #c9a227;
+  font-family: "Inter";
+  color: #c9a227;
   padding: 1.25rem;
   display: flex;
   justify-content: center;
