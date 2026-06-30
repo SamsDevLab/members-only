@@ -15,8 +15,9 @@
                 <h3><%= message.formattedTimestamp %></h3>
               </div>
              <% } else { %>
-              <h3>Become a member to view author</h3>
-              <h3>Become a member to view timestamp</h3>
+              <div class="message-details">
+                <h3>Become a member to view the author and timestamp</h3>
+              </div>
              <% } %>
               <h4><%= message.title %></h4>
               <p><%= message.text %></p>
@@ -39,10 +40,10 @@
           <input type="text" id="new-title" name="newTitle" />
         </div>
         <div class="new-message-input">
-          <label for="new-message">Message: </label>
+          <label for="new-message">Message</label>
           <textarea id="new-message" name="newMessage"></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Post</button>
       </form>
       <% } %>
     </main>
