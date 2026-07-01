@@ -30,6 +30,7 @@ li,
 figcaption {
   text-wrap: pretty;
   max-width: 65ch;
+  line-height: 1.6;
 }
 
 img,
@@ -86,7 +87,7 @@ header {
   font-family: "Cinzel";
   font-size: 1.5rem;
   color: #c9a227;
-  margin-left: auto;
+  place-self: center;
 }
 
 header a {
@@ -96,7 +97,7 @@ header a {
 }
 
 header a:hover {
-  color: #1f6f5f;
+  color: #d8c8a3;
 }
 
 header svg {
@@ -121,7 +122,7 @@ header svg {
   border-radius: 0.2rem;
   padding: 0.5rem;
   position: relative;
-  margin-right: auto;
+  place-self: center;
 }
 
 .dropdown-btn {
@@ -163,9 +164,15 @@ footer {
   border-top: 1px solid #c9a227;
   font-family: "Inter";
   color: #c9a227;
-  padding: 1.25rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+footer > h2 {
+  display: flex;
+  gap: 0.4rem;
   align-items: center;
 }
 
@@ -180,8 +187,9 @@ main {
   padding: 2rem;
 }
 
-input {
-  padding-left: 0.15rem;
+input,
+textarea {
+  padding: 0.15rem;
 }
 
 /**********************/
@@ -194,6 +202,7 @@ input {
   flex-direction: column;
   gap: 1.5rem;
   min-width: 40%;
+  max-width: 40%;
   margin: 2rem 0;
   background-color: #f8f4e9;
   padding: 2rem;
