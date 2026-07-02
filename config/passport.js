@@ -23,15 +23,15 @@ module.exports = function (passport) {
           return done(null, false, { message: "Incorrect password" });
         }
 
-        return done(null, user);
+        return done(null, user.id);
       } catch (error) {
         return done(error);
       }
     }),
   );
 
-  passport.serializeUser((user, done) => {
-    done(null, user.id);
+  passport.serializeUser((userId, done) => {
+    done(null, userId);
   });
 
   passport.deserializeUser(async (id, done) => {
