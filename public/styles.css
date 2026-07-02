@@ -79,6 +79,7 @@ header {
   padding: 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   align-items: center;
   border-bottom: 1px solid #c9a227;
 }
@@ -87,7 +88,6 @@ header {
   font-family: "Cinzel";
   font-size: 1.5rem;
   color: #c9a227;
-  place-self: center;
 }
 
 header a {
@@ -106,8 +106,6 @@ header svg {
 
 .account-info {
   display: flex;
-  justify-content: start;
-  margin-right: auto;
   gap: 1rem;
   align-items: center;
 }
@@ -121,8 +119,8 @@ header svg {
   border: 1px solid #c9a227;
   border-radius: 0.2rem;
   padding: 0.75rem;
-  position: relative;
   place-self: center;
+  position: relative;
 }
 
 .dropdown-btn {
@@ -201,12 +199,15 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  min-width: 40%;
-  max-width: 40%;
+  max-width: 47.5%;
   margin: 2rem 0;
   background-color: #f8f4e9;
   padding: 2rem;
   border-radius: 0.3rem;
+}
+
+.message-board h2 {
+  font-size: 1.25rem;
 }
 
 .message-card {
@@ -223,6 +224,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   font-size: 0.8rem;
+  color: #3c4142;
 }
 
 .delete-button {
@@ -277,7 +279,7 @@ form button:hover {
   background-color: #f8f4e9;
   padding: 1.25rem;
   border-radius: 0.3rem;
-  min-width: 40%;
+  min-width: 47.5%;
 }
 
 .add-message-form button {
@@ -296,4 +298,51 @@ form button:hover {
 .login-error {
   color: #f8f4e9;
   margin-bottom: 2rem;
+}
+
+/***********************/
+/*** Responsiveness ***/
+/*********************/
+
+@media (769px <= width <= 1200px) {
+  #main-header {
+    line-height: 1.75;
+  }
+
+  .account-info {
+    flex-direction: column;
+  }
+
+  .message-board {
+    max-width: 60%;
+  }
+
+  .add-message-form {
+    min-width: 60%;
+  }
+}
+
+@media (320px <= width <= 767px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #main-header {
+    font-size: 1.25rem;
+  }
+
+  .account-info {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .message-board {
+    max-width: 90%;
+  }
+
+  .add-message-form {
+    min-width: 90%;
+  }
 }
