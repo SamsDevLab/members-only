@@ -12,11 +12,17 @@ function renderSignUpForm(req, res) {
   res.render("auth/signup", { title: "Sign-Up Form" });
 }
 
-function submitNewUser(req, res) {
+async function submitNewUser(req, res, next) {
   const { passwordConfirmation, ...userData } = req.body;
   const newUser = { ...userData };
+  const newUserId = await usersModel.addNewUser(newUser);
 
-  usersModel.addNewUser(newUser);
+  req.login(newUserId.id, function (err) {
+    if (err) {
+      return next(err);
+    }
+    return res.redirect("/");
+  });
 }
 
 function logOut(req, res, next) {
