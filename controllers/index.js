@@ -4,7 +4,7 @@ async function getHomepage(req, res) {
   const allMessages = await messagesModel.getAllMessages();
   const user = req.user;
   res.render("index", {
-    title: "Boat Club Messaging App",
+    title: "Golden Anchor Yacht Club Messenger",
     messages: allMessages,
     user: user,
   });
