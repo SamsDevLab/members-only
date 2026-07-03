@@ -12,7 +12,6 @@ async function renderMemberSignup(req, res) {
 
 async function attemptUpgradeToMember(req, res) {
   const passwordAttempt = req.body.passwordAttempt;
-  console.log(passwordAttempt);
 
   if (passwordAttempt !== process.env.MEMBER_PASSWORD) {
     res.render("auth/membership", {
@@ -21,7 +20,6 @@ async function attemptUpgradeToMember(req, res) {
       errMsg: "Incorrect password",
     });
   } else {
-    console.log(req.user);
     await membershipModel.upgradeToMember(req.user);
     res.redirect("/");
   }
