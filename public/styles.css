@@ -347,3 +347,9 @@ form button:hover {
     min-width: 90%;
   }
 }
+
+@media (320px <= width <= 575px) {
+  main {
+    flex: 0;
+  }
+}
