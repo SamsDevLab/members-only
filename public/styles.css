@@ -350,6 +350,6 @@ form button:hover {
 
 @media (320px <= width <= 575px) {
   main {
-    flex: 0;
+    flex: none;
   }
 }
