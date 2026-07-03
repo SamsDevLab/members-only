@@ -12,12 +12,9 @@ async function renderMemberSignup(req, res) {
 
 async function attemptUpgradeToMember(req, res) {
   const passwordAttempt = req.body.passwordAttempt;
-  const match = await bcrypt.compare(
-    passwordAttempt,
-    process.env.MEMBER_PASSWORD,
-  );
+  console.log(passwordAttempt);
 
-  if (!match) {
+  if (passwordAttempt !== process.env.MEMBER_PASSWORD) {
     res.render("auth/membership", {
       title: "Member Sign Up",
       currentUser: req.user,

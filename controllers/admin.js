@@ -12,12 +12,8 @@ function renderAdminSignup(req, res) {
 
 async function attemptUpgradeToAdmin(req, res) {
   const passwordAttempt = req.body.passwordAttempt;
-  const match = await bcrypt.compare(
-    passwordAttempt,
-    process.env.ADMIN_PASSWORD,
-  );
 
-  if (!match) {
+  if (passwordAttempt !== process.env.ADMIN_PASSWORD) {
     res.render("auth/admin", {
       title: "Admin Sign Up",
       currentUser: req.user,
