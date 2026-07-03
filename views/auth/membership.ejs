@@ -5,7 +5,7 @@
     <%- include("../partials/header.ejs") %>
     <main>
       <% if(errMsg !== null) { %>
-        <p><%= errMsg %></p>
+        <p class="login-error"><%= errMsg %></p>
       <% } %>
       <form class="account-upgrade-form" action="/membership" method="POST">
         <label for="member-password"
