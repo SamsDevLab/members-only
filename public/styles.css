@@ -351,5 +351,10 @@ form button:hover {
 @media (320px <= width <= 575px) {
   main {
     flex: none;
+    justify-content: start;
+  }
+
+  .message-board {
+    min-width: 90%;
   }
 }
