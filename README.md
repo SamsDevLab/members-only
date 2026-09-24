@@ -6,6 +6,13 @@ A member-based messaging app built with Node.js, Express, PostgreSQL, EJS, and P
 
 https://members-only-i18d.onrender.com/
 
+## 🎬 Demo Account
+
+Username: demo
+Password: demomembersonly
+Member Upgrade Pass: TheDudeAbides
+Admin Upgrade Pass: It'sTheGoodLifeFromNowOn85%
+
 ## 📋 Overview
 
 This application allows:
